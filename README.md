@@ -1,5 +1,6 @@
-# library.management.api
+# Library.management.api
 # To start api project, go to directory library.management.api 
-# use npm start command
+# Use npm start command
+# You can reach DDL in main directory of project
 
 
