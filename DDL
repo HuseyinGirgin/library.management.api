@@ -1,0 +1,48 @@
+-- public.book definition
+
+-- Drop table
+
+-- DROP TABLE public.book;
+
+CREATE TABLE public.book (
+	id serial4 NOT NULL,
+	"name" varchar(255) NOT NULL,
+	score int4 NULL,
+	created_at timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT book_name_key UNIQUE (name),
+	CONSTRAINT book_pkey PRIMARY KEY (id)
+);
+
+-- public."user" definition
+
+-- Drop table
+
+-- DROP TABLE public."user";
+
+CREATE TABLE public."user" (
+	id serial4 NOT NULL,
+	"name" varchar(255) NOT NULL,
+	created_at timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT user_name_key UNIQUE (name),
+	CONSTRAINT user_pkey PRIMARY KEY (id)
+);
+
+-- public.user_book_process definition
+
+-- Drop table
+
+-- DROP TABLE public.user_book_process;
+
+CREATE TABLE public.user_book_process (
+	id serial4 NOT NULL,
+	user_id int4 NOT NULL,
+	book_id int4 NOT NULL,
+	process_name varchar(255) NOT NULL,
+	user_score int4 NULL,
+	created_at timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT user_book_process_pkey PRIMARY KEY (id),
+	CONSTRAINT user_book_process_ukey UNIQUE (user_id, book_id)
+);
